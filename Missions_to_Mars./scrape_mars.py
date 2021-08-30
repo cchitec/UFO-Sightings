@@ -11,15 +11,13 @@ executable_path = {'executable_path': ChromeDriverManager().install()}
 def scrape():
     browser = Browser('chrome', **executable_path, headless=False)
     
-     news_title, news_paragraph = mars_news(browser)
+    news_title, news_paragraph = mars_news(browser)
 
-    # Run all scraping functions and store results in a dictionary
     data = {
         "news_title": news_title,
         "news_paragraph": news_p,
         "featured_image": featured_image(browser),
         "facts": mars_facts(),
-        "hemispheres": hemispheres(browser),
         "last_modified": dt.datetime.now()
     }
 
